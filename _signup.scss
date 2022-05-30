@@ -1,0 +1,121 @@
+
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 80%;
+    border: 1px solid #888;
+    margin-bottom: 40px;
+    outline: none;
+    border-radius: 5px;
+    line-height: 20px;
+    position: relative;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border: 2px solid $primary_blue_color;
+    box-shadow: inset 2px 2px 2px rgba (0, 0, 0, .14);
+}
+
+input[type="submit"] {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    background-color: $primary_blue_color;
+    padding: 10px 0;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 15px;
+    color: #fff;
+    border: none;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #888;
+}
+
+
+form {
+    background-color: #fff;
+    padding: 30px 50px;
+    flex: 0.9;
+    align-items: center;
+    font-size: 93%;
+    margin-top: 50px;
+
+    a {
+        text-align: center;
+    }
+}
+
+.daddy {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    box-sizing: border-box;
+
+    .checkbox-text {
+        text-align: center;
+    }
+
+    .terms {
+            font-weight: bold;
+          }
+
+
+    .baby {
+        flex: 1;
+        background-color: $primary_blue_color;
+        margin: 20px 10px;
+        padding: 95px 50px 95px 50px;
+        color: white;
+        text-align: center;
+    }
+
+    #chair {
+        text-align: center;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+input[type="password"] {
+    background-image: url(./images/hide\ password.svg);
+    background-position: 330px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+}
+
+input[type="password"]:focus {
+    background-image: none;
+}
+@media screen and (max-width: 900px) {
+    .daddy {
+        max-width: 80%;
+        margin: auto;
+
+        .baby {
+            display: none;
+        }
+    }
+}

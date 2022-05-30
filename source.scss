@@ -1,0 +1,669 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 65.5%;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  $header1: 6.5rem;
+  $header2: 3.5rem;
+  $header3: 2.5rem;
+  $header4: 2rem;
+  $header5: 1.5rem;
+  $header6: 1rem;
+  
+  $primary_blue_color: hsl(258, 83%, 45%);
+  $primary_text_color: hsl(0, 0%, 41%);
+  $primary_white_color: hsl(0, 0%, 100%);
+  $primary_black_color: hsl(0, 0%, 0%);
+  $primary_bg_color: hsl(38, 50%, 97%);
+  
+  @mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+
+  header {
+    background: $primary_bg_color;
+    min-height: 100vh;
+  }
+  
+  nav {
+    min-height: 10vh;
+    @include flex(space-around, center, row);
+    width: 90%;
+    margin: auto;
+  
+    .logo {
+      margin-right: auto;
+      a {
+        text-decoration: none;
+        color: $primary_black_color;
+        font-size: $header3;
+      }
+    }
+    .nav-links {
+      @include flex(space-around, center, row);
+      width: 30%;
+      list-style: none;
+      margin-right: auto;
+      position: relative;
+      a {
+        text-decoration: none;
+        color: $primary_black_color;
+  
+        &:hover {
+          color: $primary_blue_color;
+          text-decoration: 2px solid underline;
+          text-underline-offset: 1rem;
+        }
+      }
+    }
+  
+    .register {
+      a {
+        text-decoration: none;
+        color: $primary_black_color;
+        font-weight: bolder;
+  
+        &:hover {
+          color: $primary_blue_color;
+          text-decoration: 2px solid underline;
+          text-underline-offset: 1rem;
+        }
+      }
+  
+      button {
+        margin-left: 2rem;
+        background: $primary_blue_color;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        color: $primary_white_color;
+        font-family: "Lato", sans-serif;
+        font-weight: bold;
+        transition: background 0.5s ease;
+  
+        &:hover {
+          background: $primary_black_color;
+          color: $primary_white_color;
+        }
+      }
+    }
+  
+    .hamburger {
+      display: none;
+    }
+  }
+  
+  .intro-header {
+    @include flex(center, center, row);
+    width: 90%;
+    margin: auto;
+  
+    .intro-left-side {
+      flex: 1 0 60%;
+  
+      .ratings {
+        @include flex(flex-start, center, row);
+        margin-left: auto;
+  
+        .rating-text {
+          margin-left: 1rem;
+          margin-top: 1.8rem;
+        }
+      }
+  
+      .intro-title {
+        h1 {
+          font-size: 70px;
+          font-weight: bolder;
+        }
+        p {
+          color: $primary_text_color;
+          font-size: 22px;
+        }
+      }
+  
+      .get-started {
+        margin-top: 2rem;
+  
+        button {
+          background: $primary_blue_color;
+          padding: 1.5rem 2.5rem;
+          border: none;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          color: $primary_white_color;
+          font-family: "Lato", sans-serif;
+          font-weight: bold;
+          transition: background 0.5s ease;
+  
+          &:hover {
+            background: $primary_black_color;
+            color: $primary_white_color;
+          }
+        }
+  
+        a {
+          margin-left: 2rem;
+          color: $primary_blue_color;
+          font-weight: bolder;
+          text-underline-offset: 1rem;
+  
+          &:hover {
+            color: $primary_black_color;
+          }
+        }
+      }
+  
+      .check-feature {
+        margin-top: 2rem;
+        @include flex(flex-start, center, row);
+        .access-one {
+          @include flex(flex-start, center, row);
+          p {
+            margin-left: 0.6rem;
+            margin-top: 1.1rem;
+            color: $primary_text_color;
+          }
+        }
+        .access-two {
+          margin-left: 2rem;
+          @include flex(flex-start, center, row);
+  
+          p {
+            margin-left: 0.6rem;
+            margin-top: 1.1rem;
+            color: $primary_text_color;
+          }
+        }
+      }
+    }
+  
+    .intro-right-side {
+      flex: 1 0 40%;
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-container {
+    width: 90%;
+    margin: auto;
+  }
+  .portfolio-benefits {
+    margin-top: 5rem;
+    .benefit-title {
+      h3 {
+        font-size: $header4;
+        font-weight: bolder;
+        color: $primary_blue_color;
+      }
+      h4 {
+        margin-top: 2rem;
+        font-weight: bolder;
+        font-size: 3rem;
+      }
+    }
+    .benefit-features {
+      margin-top: 4rem;
+      @include flex(space-between, center, row);
+      .minute-feature {
+        h5 {
+          margin-top: 1rem;
+          font-weight: bold;
+          font-size: $header5;
+        }
+  
+        p {
+          margin-top: 1rem;
+          color: $primary_text_color;
+          font-size: 20px;
+        }
+      }
+  
+      .css-feature {
+        h5 {
+          margin-top: 1rem;
+          font-weight: bold;
+          font-size: $header5;
+        }
+  
+        p {
+          margin-top: 1rem;
+          color: $primary_text_color;
+          font-size: 20px;
+        }
+      }
+  
+      .responsive-feature {
+        h5 {
+          margin-top: 1rem;
+          font-weight: bold;
+          font-size: $header5;
+        }
+  
+        p {
+          margin-top: 1rem;
+          color: $primary_text_color;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  
+  .diversify-section {
+    margin: auto;
+    padding: 3rem 3rem;
+    margin-top: 10rem;
+    background: $primary_blue_color;
+    border-radius: 1rem;
+    @include flex(space-between, center, row);
+    position: relative;
+  
+    .diversify-text {
+      flex: 1 0 40%;
+  
+      h3 {
+        font-size: 40px;
+        color: $primary_white_color;
+      }
+      p { 
+        font-size: 15px;
+        color: $primary_white_color;
+      }
+      button {
+        margin-top: 2rem;
+        background: $primary_white_color;
+        padding: 2rem 3rem;
+        color: $primary_blue_color;
+        border: none;
+        font-family: "Lato", sans-serif;
+        font-weight: bold;
+        font-size: $header5;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.5s ease;
+  
+        &:hover {
+          background: $primary_black_color;
+          color: $primary_white_color;
+        }
+      }
+    }
+  
+    .diversify-image {
+      flex: 1 0 50%;
+      position: relative;
+      top: 33px;
+      bottom: 0px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .cards {
+    @include flex(space-between, center, row);
+    margin-top: 10rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    .card {
+      width: 370px;
+      margin-left: 0.5rem;
+      border-radius: 5px;
+      border: 2px solid rgb(202, 202, 202);
+      padding: 2rem 2rem;
+      .avatar-info {
+        @include flex(flex-start, center, row);
+  
+        .names-detail {
+          margin-left: 2rem;
+        }
+      }
+  
+      h5 {
+        color: $primary_blue_color;
+        font-weight: bold;
+        font-size: $header5;
+      }
+  
+      .revenue {
+        font-size: small;
+        font-weight: bold;
+      }
+  
+      .comment {
+        margin-top: 2rem;
+        color: $primary_text_color;
+      }
+  
+      button {
+        margin-top: 2rem;
+        border: 2px solid rgb(202, 202, 202);
+        padding: 1rem;
+        width: 100%;
+        font-family: "Lato", sans-serif;
+        font-size: $header5;
+        font-weight: bold;
+        color: $primary_blue_color;
+        cursor: pointer;
+        transition: background 0.5s ease;
+        background-color: #fff;
+  
+        &:hover {
+          background: $primary_blue_color;
+          color: $primary_white_color;
+        }
+      }
+    }
+  }
+
+
+  .footer-container {
+    margin-top: 10rem;
+    min-height: 50vh;
+    background: $primary_bg_color;
+    @include flex(center, center, row);
+  
+    .footer-content {
+      width: 90%;
+      margin: auto;
+      @include flex(space-between, center, row);
+  
+      .logo-footer {
+        align-self: baseline;
+        a {
+          color: $primary_black_color;
+          font-size: $header4;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        p {
+          margin-top: 1rem;
+          color: $primary_text_color;
+        }
+  
+        .heart {
+          color: $primary_text_color;
+        }
+      }
+  
+      .sitemap {
+        h4 {
+          font-size: $header5;
+          margin-left: 20px;
+          margin-top: 10px;
+        }
+        .sitemap-links {
+          list-style: none;
+          a {
+            text-decoration: none;
+            margin-top: 1rem;
+            color: $primary_text_color;
+  
+            &:hover {
+              color: $primary_blue_color;
+              text-decoration: 2px solid $primary_blue_color underline;
+              text-underline-offset: 0.5rem;
+            }
+          }
+          li {
+            margin-top: 1rem;
+          }
+        }
+      }
+  
+      .resources {
+        align-self: baseline;
+        h4 {
+          font-size: $header5;
+          margin-left: 20px;
+        }
+        .resources-links {
+          list-style: none;
+          a {
+            text-decoration: none;
+            margin-top: 1rem;
+            color: $primary_text_color;
+  
+            &:hover {
+              color: $primary_blue_color;
+              text-decoration: 2px solid $primary_blue_color underline;
+              text-underline-offset: 0.5rem;
+            }
+          }
+          li {
+            margin-top: 1rem;
+          }
+        }
+      }
+  
+      .company {
+        align-self: baseline;
+        h4 {
+          font-size: $header5;
+          margin-left: 19px;
+        }
+        .company-links {
+          list-style: none;
+          a {
+            text-decoration: none;
+            margin-top: 1rem;
+            color: $primary_text_color;
+  
+            &:hover {
+              color: $primary_blue_color;
+              text-decoration: 2px solid $primary_blue_color underline;
+              text-underline-offset: 0.5rem;
+            }
+          }
+          li {
+            margin-top: 1rem;
+          }
+        }
+      }
+  
+      .portfolios {
+        align-self: baseline;
+        h4 {
+          font-size: $header5;
+          margin-left: 20px;
+        }
+        .portfolios-links {
+          list-style: none;
+          a {
+            text-decoration: none;
+            margin-top: 1rem;
+            color: $primary_text_color;
+  
+            &:hover {
+              color: $primary_blue_color;
+              text-decoration: 2px solid $primary_blue_color underline;
+              text-underline-offset: 0.5rem;
+            }
+          }
+          li {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+
+@import "signup";
+
+@media screen and (max-width: 900px) {
+    nav {
+      position: relative;
+      .nav-links {
+        @include flex(space-evenly, center, column);
+        position: absolute;
+        top: 10vh;
+        width: 100%;
+        height: 100vh;
+        background: $primary_blue_color;
+        border-radius: 1rem;
+        transform: translateX(-100%);
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        a {
+          color: $primary_white_color;
+          &:hover {
+            color: $primary_black_color;
+          }
+        }
+      }
+  
+      .nav-links.open {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+  
+      .register {
+        display: none;
+      }
+  
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  
+    .intro-header {
+      flex-direction: column;
+      flex-direction: column-reverse;
+  
+      .intro-left-side {
+        text-align: center;
+        margin-top: 3rem;
+  
+        .ratings {
+          justify-content: center;
+        }
+  
+        .check-feature {
+          @include flex(flex-start, center, column);
+  
+          .access-two {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  
+    .portfolio-benefits {
+      .benefit-title {
+        text-align: center;
+      }
+      .benefit-features {
+        flex-wrap: wrap;
+        justify-content: center;
+  
+        .minute-feature {
+          text-align: center;
+        }
+  
+        .css-feature {
+          margin-top: 2rem;
+          text-align: center;
+        }
+  
+        .responsive-feature {
+          margin-top: 2rem;
+          text-align: center;
+        }
+      }
+    }
+  
+    .diversify-section {
+      flex-direction: column;
+  
+      .diversify-text {
+        button {
+          width: 100%;
+        }
+      }
+    }
+  
+    .cards {
+      flex-direction: column;
+      .card {
+        margin-top: 2rem;
+      }
+    }
+  
+    .footer-container {
+      min-height: 100vh;
+      .footer-content {
+        flex-direction: column;
+        padding: 3rem;
+        .logo-footer {
+          align-self: center;
+          text-align: center;
+        }
+  
+        .sitemap {
+          align-self: center;
+          text-align: center;
+          margin-top: 2rem;
+        }
+  
+        .resources {
+          align-self: center;
+          text-align: center;
+          margin-top: 2rem;
+        }
+  
+        .company {
+          align-self: center;
+          text-align: center;
+          margin-top: 2rem;
+        }
+  
+        .portfolios {
+          align-self: center;
+          text-align: center;
+          margin-top: 2rem;
+        }
+      }
+    }
+  
+    .daddy {
+      @include flex(center, center, column);
+    }
+    .house {
+        display: none;
+    }
+  }
+
+  
